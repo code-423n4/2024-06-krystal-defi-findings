@@ -1,0 +1,8 @@
+{
+  "contest": 399,
+  "handle": "Bauchibred",
+  "risk": "2",
+  "title": "The BSC chain doesn't have a WETH wrapper which would cause issues for protocol's deployment on the chain",
+  "issueId": 6,
+  "issueUrl": "https://github.com/code-423n4/2024-06-krystal-defi-findings/issues/6"
+}
