@@ -1,0 +1,8 @@
+{
+  "contest": 399,
+  "handle": "Bauchibred",
+  "risk": "2",
+  "title": " `StructHash.sol`'s rebalancing and order typehashing have an extra lower keccak hash of the type that's not included in the `TYPEHASH` for these actions themselves leading to errors",
+  "issueId": 9,
+  "issueUrl": "https://github.com/code-423n4/2024-06-krystal-defi-findings/issues/9"
+}
