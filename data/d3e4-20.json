@@ -1,0 +1,8 @@
+{
+  "contest": 399,
+  "handle": "d3e4",
+  "risk": "2",
+  "title": "Inconsistent and potentially reverting handling of tokens that do not allow an approval amount of 0",
+  "issueId": 20,
+  "issueUrl": "https://github.com/code-423n4/2024-06-krystal-defi-findings/issues/20"
+}
