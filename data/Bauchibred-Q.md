@@ -1,6 +1,18 @@
 # QA Report for **Krystal Defi**
+## Table of Contents
 
-## Some addresses wouldn't be able to have the native token balance withdrawn to them
+| Issue ID | Description |
+| -------- | ----------- |
+| [QA-01](#qa-01-some-addresses-wouldnt-be-able-to-have-the-native-token-balance-withdrawn-to-them) | Some addresses wouldn't be able to have the native token balance withdrawn to them |
+| [QA-02](#qa-02-the-if-(params.token0-==-params.token1)-can-be-sidestepped-since-tokens-with-multiple-addresses-are-supported) | The `if (params.token0 == params.token1)` can be sidestepped since tokens with multiple addresses are supported |
+| [QA-02](#qa-02-the-if-(params.token0-==-params.token1)-can-be-sidestepped-since-tokens-with-multiple-addresses-are-supported) | The `if (params.token0 == params.token1)` can be sidestepped since tokens with multiple addresses are supported |
+| [QA-04](#qa-04-functionalities-in-krystal-defi-could-be-dosd-when-some-tokens-are-integrated) | Functionalities in Krystal Defi could be DOS'd when some tokens are integrated |
+| [QA-05](#qa-05-redundant-check-in-common#_deductfees()) | Redundant check in `Common#_deductFees()` |
+| [QA-06](#qa-06-make-v3utils#execute()-more-effective) | Make `V3Utils#execute()` more effective |
+| [QA-07](#qa-07-comments-should-lead-to-valid-links) | Comments should lead to valid links |
+| [QA-08](#qa-08-common.sol-might-never-get-initialised) | Common.sol might never get initialised |
+| [QA-09](#qa-09-open-todos-should-be-sorted-before-live-deployment) | Open todos should be sorted before live deployment |
+## QA-01 Some addresses wouldn't be able to have the native token balance withdrawn to them
 
 ### Proof of Concept
 
@@ -31,7 +43,7 @@ DOS to withdraw native token in some cases as the withdrawals can no longer be f
 
 Consider not using the `payable.transfer()` and instead send the ether via the `.call()` method.
 
-## The `if (params.token0 == params.token1)` can be sidestepped since tokens with multiple addresses are supported
+## QA-02 The `if (params.token0 == params.token1)` can be sidestepped since tokens with multiple addresses are supported
 
 ### Proof of Concept
 
@@ -106,7 +118,7 @@ QA
 
 Do not support these tokens.
 
-## Setters don't have equality checkers
+## QA-03 Setters don't have equality checkers
 
 ### Proof of Concept
 
@@ -130,7 +142,7 @@ Unnecessary code execution in the case where ` _maxFeeX64[feeType] == feex64`
 
 Consider including equality checkers in the setter functions.
 
-## Functionalities in Krystal Defi could be DOS'd when some tokens are integrated
+## QA-04 Functionalities in Krystal Defi could be DOS'd when some tokens are integrated
 
 ### Proof of Concept
 
@@ -159,7 +171,7 @@ QA, considering the very low likelihood.
 
 Do not support these tokens or query `.balanceOf()` on a low-level.
 
-## Redundant check in `Common#_deductFees()`
+## QA-05 Redundant check in `Common#_deductFees()`
 
 ### Proof of Concept
 
@@ -246,7 +258,7 @@ Redundant code execution, unnecessary gas consumption.
 
 Consider removing the check in the internal `_deductFees()`.
 
-## Make `V3Utils#execute()` more effective
+## QA-06 Make `V3Utils#execute()` more effective
 
 ### Proof of Concept
 
@@ -277,7 +289,7 @@ Code implementation is not the most effective
 
 Consider integrating an approval method in the function itself.
 
-## Comments should lead to valid links
+## QA-07 Comments should lead to valid links
 
 ### Proof of Concept
 
@@ -338,7 +350,7 @@ Consider attaching a space between the link and the next character, i.e :
     }
 ```
 
-## Common.sol might never get initialised
+## QA-08 Common.sol might never get initialised
 
 ### Proof of Concept
 
@@ -384,7 +396,8 @@ QA, imo as this can be considered admin error.
 
 Consider checking against one address instead
 
-## Open todos should be sorted before live deployment
+## QA-08 Common.sol might never get initialised
+## QA-09 Open todos should be sorted before live deployment
 
 ### Proof of Concept
 
@@ -409,3 +422,4 @@ QA... Un-ready code is being deployed.
 ### Recommended Mitigation Steps
 
 Consider sorting out all _todos_ before final deployment.
+
