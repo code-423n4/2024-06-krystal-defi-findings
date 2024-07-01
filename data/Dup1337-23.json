@@ -1,0 +1,8 @@
+{
+  "contest": 399,
+  "handle": "Dup1337",
+  "risk": "3",
+  "title": "Tokens values of decimals are not justified in fee deduction",
+  "issueId": 23,
+  "issueUrl": "https://github.com/code-423n4/2024-06-krystal-defi-findings/issues/23"
+}
